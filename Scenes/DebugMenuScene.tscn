@@ -1,0 +1,86 @@
+[gd_scene load_steps=2 format=3 uid="uid://dyyadcrj4n8bi"]
+
+[ext_resource type="Script" path="res://Scripts/DebugMenuScript.gd" id="1_mh7oq"]
+
+[node name="DebugMenuScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mh7oq")
+
+[node name="Node" type="Node" parent="."]
+
+[node name="Button" type="Button" parent="Node"]
+offset_left = 438.0
+offset_top = 215.0
+offset_right = 579.0
+offset_bottom = 248.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Node/Button"]
+auto_translate_mode = 1
+layout_mode = 0
+offset_right = 141.0
+offset_bottom = 40.0
+text = "OPTIONS"
+
+[node name="TextEdit" type="TextEdit" parent="Node/Button"]
+layout_mode = 0
+offset_left = 95.0
+offset_top = 80.0
+offset_right = 236.0
+offset_bottom = 113.0
+text = "OPTIONS"
+editable = false
+
+[node name="StartGameButton" type="Button" parent="Node"]
+offset_right = 52.0
+offset_bottom = 29.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Node/StartGameButton"]
+layout_mode = 0
+offset_right = 62.0
+offset_bottom = 40.0
+text = "START"
+
+[node name="Node2" type="Node" parent="."]
+
+[node name="GameplayModifierOptions" type="Node" parent="."]
+
+[node name="BorderTilesCheckBox" type="CheckBox" parent="GameplayModifierOptions"]
+offset_left = 1001.0
+offset_top = 180.0
+offset_right = 1025.0
+offset_bottom = 204.0
+
+[node name="BorderTilesLabel" type="RichTextLabel" parent="GameplayModifierOptions"]
+offset_left = 813.0
+offset_top = 179.0
+offset_right = 1007.0
+offset_bottom = 219.0
+text = "Include Border Tiles:"
+
+[node name="MixedTilesCheckBox" type="CheckBox" parent="GameplayModifierOptions"]
+offset_left = 1000.0
+offset_top = 253.0
+offset_right = 1024.0
+offset_bottom = 277.0
+
+[node name="MixedTilesLabel" type="RichTextLabel" parent="GameplayModifierOptions"]
+offset_left = 815.0
+offset_top = 253.0
+offset_right = 988.0
+offset_bottom = 293.0
+text = "Include Mixed Tiles:"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GameplayModifierOptions"]
+offset_left = 802.0
+offset_top = 76.0
+offset_right = 964.0
+offset_bottom = 116.0
+text = "Gameplay modifiers"
+
+[connection signal="pressed" from="GameplayModifierOptions/BorderTilesCheckBox" to="." method="_onBorderTilespressed"]
+[connection signal="pressed" from="GameplayModifierOptions/MixedTilesCheckBox" to="." method="_onMixedTilespressed"]

@@ -1,0 +1,162 @@
+[gd_scene load_steps=19 format=3 uid="uid://ddaielv5ecxeb"]
+
+[ext_resource type="Script" path="res://TileProperties.gd" id="1_b5ypn"]
+[ext_resource type="Texture2D" uid="uid://qtgff8gww8ke" path="res://Textures/HexagonGameTileCompleteBorder.png" id="2_r312y"]
+[ext_resource type="ArrayMesh" uid="uid://2bcarhgkmg0v" path="res://HexagonObjects/HexagonPiece.obj" id="3_8k1ow"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_saht1"]
+transparency = 1
+albedo_texture = ExtResource("2_r312y")
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.15
+grow_amount = -0.05
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_qhlpy"]
+
+[sub_resource type="FontVariation" id="FontVariation_7kphp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dfmlf"]
+albedo_color = Color(0, 0.352941, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qqy6f"]
+albedo_color = Color(0, 0.352941, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iawhj"]
+albedo_color = Color(0, 0.352941, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lnkt6"]
+albedo_color = Color(0, 0.352941, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_028yp"]
+albedo_color = Color(0, 0.352941, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1k1d7"]
+albedo_color = Color(0.784314, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aahno"]
+albedo_color = Color(0, 0.352941, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iklbb"]
+albedo_color = Color(0.784314, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bjrsv"]
+albedo_color = Color(0, 0.352941, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ca77k"]
+albedo_color = Color(0, 0.352941, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g2we7"]
+albedo_color = Color(0, 0.352941, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y6he1"]
+albedo_color = Color(0, 0.352941, 1, 1)
+
+[node name="HexagonPrefab" type="Node3D"]
+script = ExtResource("1_b5ypn")
+
+[node name="Decals" type="Node3D" parent="."]
+
+[node name="CompleteBorder" type="MeshInstance3D" parent="Decals"]
+transform = Transform3D(12.1, 0, 0, 0, -12.1, 1.82705e-06, 0, -1.82705e-06, -12.1, 0, -1.666, 0)
+material_override = SubResource("StandardMaterial3D_saht1")
+mesh = SubResource("PlaneMesh_qhlpy")
+skeleton = NodePath("../..")
+
+[node name="PartialTextNumber" type="Label3D" parent="Decals"]
+transform = Transform3D(-1, -8.74228e-08, 4.37114e-08, 4.37114e-08, 1.91069e-15, 1, -8.74228e-08, 1, 1.91069e-15, 0, 1.666, 0)
+pixel_size = 0.05
+offset = Vector2(0, 16)
+outline_modulate = Color(1, 1, 1, 1)
+text = "6"
+font = SubResource("FontVariation_7kphp")
+font_size = 375
+outline_size = 32
+
+[node name="CompleteTextNumber" type="Label3D" parent="Decals"]
+transform = Transform3D(1, 0, -3.82137e-15, -3.82137e-15, 4.37114e-08, -1, 0, 1, 4.37114e-08, 0, -1.666, 0)
+pixel_size = 0.05
+offset = Vector2(0, 16)
+outline_modulate = Color(1, 1, 1, 1)
+text = "6"
+font = SubResource("FontVariation_7kphp")
+font_size = 375
+outline_size = 32
+
+[node name="HexagonPieces" type="Node3D" parent="."]
+
+[node name="CompleteSide" type="Node3D" parent="HexagonPieces"]
+
+[node name="0" type="MeshInstance3D" parent="HexagonPieces/CompleteSide"]
+transform = Transform3D(0.333, 0, 0, 0, 0.167, 0, 0, 0, 0.333, -7.25842e-08, -0.830266, 7)
+mesh = ExtResource("3_8k1ow")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_dfmlf")
+
+[node name="3" type="MeshInstance3D" parent="HexagonPieces/CompleteSide"]
+transform = Transform3D(0.1665, 0, -0.288386, 0, 0.167, 0, 0.288386, 0, 0.1665, -6.05, -0.83, 3.495)
+material_override = SubResource("StandardMaterial3D_qqy6f")
+mesh = ExtResource("3_8k1ow")
+skeleton = NodePath("../0")
+
+[node name="4" type="MeshInstance3D" parent="HexagonPieces/CompleteSide"]
+transform = Transform3D(-0.1665, 0, -0.288386, 0, 0.167, 0, 0.288386, 0, -0.1665, -6.05, -0.83, -3.495)
+material_override = SubResource("StandardMaterial3D_iawhj")
+mesh = ExtResource("3_8k1ow")
+skeleton = NodePath("../3")
+
+[node name="5" type="MeshInstance3D" parent="HexagonPieces/CompleteSide"]
+transform = Transform3D(-0.333, 0, -5.02816e-08, 0, 0.167, 0, 5.02816e-08, 0, -0.333, 0, -0.83, -7)
+material_override = SubResource("StandardMaterial3D_lnkt6")
+mesh = ExtResource("3_8k1ow")
+skeleton = NodePath("../../..")
+
+[node name="2" type="MeshInstance3D" parent="HexagonPieces/CompleteSide"]
+transform = Transform3D(-0.1665, 0, 0.288386, 0, 0.167, 0, -0.288386, 0, -0.1665, 6.05, -0.83, -3.495)
+material_override = SubResource("StandardMaterial3D_028yp")
+mesh = ExtResource("3_8k1ow")
+skeleton = NodePath("../5")
+
+[node name="1" type="MeshInstance3D" parent="HexagonPieces/CompleteSide"]
+transform = Transform3D(0.1665, 0, 0.288387, 0, 0.167, 0, -0.288387, 0, 0.1665, 6.058, -0.83, 3.495)
+material_override = SubResource("StandardMaterial3D_1k1d7")
+mesh = ExtResource("3_8k1ow")
+skeleton = NodePath("../5")
+
+[node name="PartialSide" type="Node3D" parent="HexagonPieces"]
+
+[node name="0" type="MeshInstance3D" parent="HexagonPieces/PartialSide"]
+transform = Transform3D(0.333, 0, 0, 0, 0.167, 0, 0, 0, 0.333, 0, 0.83, 7)
+mesh = ExtResource("3_8k1ow")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_aahno")
+
+[node name="1" type="MeshInstance3D" parent="HexagonPieces/PartialSide"]
+transform = Transform3D(0.1665, 0, -0.288386, 0, 0.167, 0, 0.288386, 0, 0.1665, -6.05, 0.83, 3.495)
+material_override = SubResource("StandardMaterial3D_iklbb")
+mesh = ExtResource("3_8k1ow")
+skeleton = NodePath("../0")
+
+[node name="2" type="MeshInstance3D" parent="HexagonPieces/PartialSide"]
+transform = Transform3D(-0.1665, 0, -0.288386, 0, 0.167, 0, 0.288386, 0, -0.1665, -6.05, 0.83, -3.495)
+material_override = SubResource("StandardMaterial3D_bjrsv")
+mesh = ExtResource("3_8k1ow")
+skeleton = NodePath("../1")
+
+[node name="5" type="MeshInstance3D" parent="HexagonPieces/PartialSide"]
+transform = Transform3D(-0.333, 0, -5.02816e-08, 0, 0.167, 0, 5.02816e-08, 0, -0.333, 0, 0.83, -7)
+material_override = SubResource("StandardMaterial3D_ca77k")
+mesh = ExtResource("3_8k1ow")
+skeleton = NodePath("../../..")
+
+[node name="4" type="MeshInstance3D" parent="HexagonPieces/PartialSide"]
+transform = Transform3D(-0.1665, 0, 0.288386, 0, 0.167, 0, -0.288386, 0, -0.1665, 6.05, 0.83, -3.495)
+material_override = SubResource("StandardMaterial3D_g2we7")
+mesh = ExtResource("3_8k1ow")
+skeleton = NodePath("../5")
+
+[node name="3" type="MeshInstance3D" parent="HexagonPieces/PartialSide"]
+transform = Transform3D(0.1665, 0, 0.288387, 0, 0.167, 0, -0.288387, 0, 0.1665, 6.058, 0.83, 3.495)
+material_override = SubResource("StandardMaterial3D_y6he1")
+mesh = ExtResource("3_8k1ow")
+skeleton = NodePath("../5")

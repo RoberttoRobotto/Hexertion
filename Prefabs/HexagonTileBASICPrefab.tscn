@@ -1,0 +1,56 @@
+[gd_scene load_steps=8 format=3 uid="uid://by7jje3y4oxnl"]
+
+[ext_resource type="Script" path="res://TileProperties.gd" id="1_u7wfg"]
+[ext_resource type="Texture2D" uid="uid://qtgff8gww8ke" path="res://Textures/HexagonGameTileCompleteBorder.png" id="2_r5bvd"]
+[ext_resource type="ArrayMesh" uid="uid://c22l084opsbww" path="res://HexagonObjects/HexagonTile.obj" id="3_l1lw8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_saht1"]
+transparency = 1
+albedo_texture = ExtResource("2_r5bvd")
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.15
+grow_amount = -0.05
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_qhlpy"]
+
+[sub_resource type="FontVariation" id="FontVariation_7kphp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mqy8m"]
+albedo_color = Color(0, 0.352941, 1, 1)
+
+[node name="HexagonPrefab" type="Node3D"]
+script = ExtResource("1_u7wfg")
+
+[node name="Decals" type="Node3D" parent="."]
+
+[node name="CompleteBorder" type="MeshInstance3D" parent="Decals"]
+transform = Transform3D(12.1, 0, 0, 0, -12.1, 1.82705e-06, 0, -1.82705e-06, -12.1, 0, -1.666, 0)
+material_override = SubResource("StandardMaterial3D_saht1")
+mesh = SubResource("PlaneMesh_qhlpy")
+skeleton = NodePath("../..")
+
+[node name="PartialTextNumber" type="Label3D" parent="Decals"]
+transform = Transform3D(-1, -8.74228e-08, 4.37114e-08, 4.37114e-08, 1.91069e-15, 1, -8.74228e-08, 1, 1.91069e-15, 0, 1.666, 0)
+pixel_size = 0.05
+offset = Vector2(0, 16)
+outline_modulate = Color(1, 1, 1, 1)
+text = "6"
+font = SubResource("FontVariation_7kphp")
+font_size = 375
+outline_size = 32
+
+[node name="CompleteTextNumber" type="Label3D" parent="Decals"]
+transform = Transform3D(1, 0, -3.82137e-15, -3.82137e-15, 4.37114e-08, -1, 0, 1, 4.37114e-08, 0, -1.666, 0)
+pixel_size = 0.05
+offset = Vector2(0, 16)
+outline_modulate = Color(1, 1, 1, 1)
+text = "6"
+font = SubResource("FontVariation_7kphp")
+font_size = 375
+outline_size = 32
+
+[node name="HexagonTile" type="MeshInstance3D" parent="."]
+transform = Transform3D(3.185, 0, 0, 0, 3.33, 0, 0, 0, 3.185, 0, 0, 0)
+mesh = ExtResource("3_l1lw8")
+surface_material_override/0 = SubResource("StandardMaterial3D_mqy8m")

@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://cxdl3xd0s3ebg"]
+
+[ext_resource type="Script" path="res://Scripts/PlacementProperties.gd" id="1_elk8b"]
+[ext_resource type="ArrayMesh" uid="uid://2bcarhgkmg0v" path="res://HexagonObjects/HexagonPiece.obj" id="2_y5gik"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6oya0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a330i"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.176471)
+
+[node name="PlacementPrefab" type="Node3D"]
+script = ExtResource("1_elk8b")
+
+[node name="Hitbox" type="Area3D" parent="."]
+
+[node name="HitboxCollider" type="CollisionShape3D" parent="Hitbox"]
+transform = Transform3D(1.81, 0, 0, 0, 1.81, 0, 0, 0, 1.81, 0, 0, 0)
+shape = SubResource("BoxShape3D_6oya0")
+
+[node name="HexagonPiece" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+visible = false
+mesh = ExtResource("2_y5gik")
+surface_material_override/0 = SubResource("StandardMaterial3D_a330i")
+
+[connection signal="mouse_entered" from="Hitbox" to="." method="_on_hitbox_mouse_entered"]
+[connection signal="mouse_exited" from="Hitbox" to="." method="_on_hitbox_mouse_exited"]

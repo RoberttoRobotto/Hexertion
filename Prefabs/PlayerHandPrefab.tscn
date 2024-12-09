@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://bxv4l88jrbqqj"]
+
+[ext_resource type="Script" path="res://Prefabs/PlayerHandProperties.gd" id="1_q3tgt"]
+[ext_resource type="Texture2D" uid="uid://qtgff8gww8ke" path="res://Textures/HexagonGameTileCompleteBorder.png" id="2_xekso"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mi581"]
+transparency = 1
+albedo_color = Color(0.784314, 0.588235, 0.392157, 1)
+albedo_texture = ExtResource("2_xekso")
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.15
+grow_amount = -0.05
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_al8jt"]
+
+[node name="PlayerHandPrefab" type="Node3D"]
+script = ExtResource("1_q3tgt")
+
+[node name="CompleteBorder" type="MeshInstance3D" parent="."]
+transform = Transform3D(12.1, 0, 0, 0, 12.1, 0, 0, 0, 12.1, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_mi581")
+mesh = SubResource("PlaneMesh_al8jt")
+skeleton = NodePath("../..")

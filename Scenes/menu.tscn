@@ -1,0 +1,264 @@
+[gd_scene load_steps=3 format=3 uid="uid://5c030kvyrb2k"]
+
+[ext_resource type="Script" path="res://Scripts/Menu.gd" id="1_8tn2o"]
+[ext_resource type="Texture2D" uid="uid://gk582kyd4vc3" path="res://Textures/HexertionMenuBeta.png" id="2_5w3am"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8tn2o")
+
+[node name="MainMenu" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = -62.5
+offset_right = 35.0
+offset_bottom = 62.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="MainMenu"]
+layout_mode = 2
+texture = ExtResource("2_5w3am")
+stretch_mode = 5
+
+[node name="PuzzleModeButton" type="Button" parent="MainMenu/TextureRect"]
+layout_direction = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -51.0
+offset_top = -180.0
+offset_right = 54.0
+offset_bottom = -149.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Puzzle Mode"
+
+[node name="CompetitiveButton" type="Button" parent="MainMenu/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -15.5
+offset_right = 75.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Competitive Mode"
+
+[node name="OptionsButton" type="Button" parent="MainMenu/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = 102.0
+offset_right = 35.0
+offset_bottom = 133.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Options"
+
+[node name="StartButton" type="Button" parent="MainMenu/TextureRect"]
+visible = false
+layout_mode = 2
+offset_top = -129.0
+offset_right = 600.0
+offset_bottom = -98.0
+text = "Start"
+
+[node name="QuitButton" type="Button" parent="MainMenu/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.0
+offset_top = 220.0
+offset_right = 21.0
+offset_bottom = 251.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Quit"
+
+[node name="OptionsMenu" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="BackButton" type="Button" parent="OptionsMenu"]
+layout_mode = 2
+text = "Back"
+
+[node name="PuzzleModeMenu" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+tooltip_text = "asdas"
+
+[node name="TextureRect" type="TextureRect" parent="PuzzleModeMenu"]
+layout_mode = 2
+texture = ExtResource("2_5w3am")
+stretch_mode = 5
+
+[node name="QuickPlayStartButton" type="Button" parent="PuzzleModeMenu/TextureRect"]
+layout_direction = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -51.0
+offset_top = -180.0
+offset_right = 54.0
+offset_bottom = -149.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Quick Play Start"
+
+[node name="BorderTilesCheckBox" type="CheckBox" parent="PuzzleModeMenu/TextureRect"]
+layout_mode = 2
+offset_left = 54.0
+offset_top = 279.0
+offset_right = 179.0
+offset_bottom = 310.0
+text = "Border Tiles
+"
+
+[node name="EmptyTilesCheckBox" type="CheckBox" parent="PuzzleModeMenu/TextureRect"]
+layout_mode = 0
+offset_left = 231.0
+offset_top = 279.0
+offset_right = 348.0
+offset_bottom = 310.0
+text = "Empty Tiles"
+
+[node name="CheckSelfTilesCheckBox" type="CheckBox" parent="PuzzleModeMenu/TextureRect"]
+layout_mode = 0
+offset_left = 380.0
+offset_top = 279.0
+offset_right = 527.0
+offset_bottom = 310.0
+text = "Self Check Tiles"
+
+[node name="CampaignButton" type="Button" parent="PuzzleModeMenu/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -47.0
+offset_top = -53.0
+offset_right = 47.0
+offset_bottom = -22.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Campaign"
+
+[node name="TutorialButton" type="Button" parent="PuzzleModeMenu/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = 5.0
+offset_right = 35.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Tutorial"
+
+[node name="Appendix Button" type="Button" parent="PuzzleModeMenu/TextureRect"]
+layout_mode = 2
+offset_left = 251.0
+offset_top = 449.0
+offset_right = 349.0
+offset_bottom = 480.0
+text = "Appendix"
+
+[node name="BackButton" type="Button" parent="PuzzleModeMenu/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.0
+offset_top = 220.0
+offset_right = 21.0
+offset_bottom = 251.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Back"
+
+[node name="CompetitiveModeMenu" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 2
+offset_left = 556.0
+offset_top = 316.0
+offset_right = 596.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+tooltip_text = "asdas"
+
+[node name="BackButton" type="Button" parent="CompetitiveModeMenu"]
+layout_mode = 2
+text = "Back"
+
+[connection signal="pressed" from="MainMenu/TextureRect/PuzzleModeButton" to="." method="_on_puzzle_mode_button_pressed"]
+[connection signal="pressed" from="MainMenu/TextureRect/CompetitiveButton" to="." method="_on_competitive_button_pressed"]
+[connection signal="pressed" from="MainMenu/TextureRect/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="MainMenu/TextureRect/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="MainMenu/TextureRect/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="OptionsMenu/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="PuzzleModeMenu/TextureRect/QuickPlayStartButton" to="." method="_on_puzzle_mode_button_pressed"]
+[connection signal="pressed" from="PuzzleModeMenu/TextureRect/CampaignButton" to="." method="_on_competitive_button_pressed"]
+[connection signal="pressed" from="PuzzleModeMenu/TextureRect/TutorialButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="PuzzleModeMenu/TextureRect/Appendix Button" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="PuzzleModeMenu/TextureRect/BackButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="CompetitiveModeMenu/BackButton" to="." method="_on_back_button_pressed"]

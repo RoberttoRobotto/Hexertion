@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://deng2bi0aopb8"]
+
+[ext_resource type="PackedScene" uid="uid://dkcxc3wgq1bdt" path="res://Prefabs/HexagonTilePrefabv2.tscn" id="2_eewd5"]
+[ext_resource type="PackedScene" uid="uid://cxdl3xd0s3ebg" path="res://Prefabs/HitboxPrefab.tscn" id="2_tur7l"]
+[ext_resource type="Texture2D" uid="uid://clf3r44js6byy" path="res://Textures/HexagonBoardDebug.png" id="4_bwkjk"]
+[ext_resource type="Script" path="res://Scripts/EventHandler.gd" id="5_nwggx"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_4m16b"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_arefp"]
+transparency = 1
+albedo_texture = ExtResource("4_bwkjk")
+
+[node name="DebugScene" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.5, -2.18557e-08, 0, -4.37114e-08, 1, -0.5, 0.866025, 3.78552e-08, 0, 0, 0)
+shadow_enabled = true
+directional_shadow_max_distance = 2.0
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-1, 8.74228e-08, 3.82137e-15, 0, -4.37114e-08, 1, 8.74228e-08, 1, 4.37114e-08, 0, 13.275, 0)
+
+[node name="TileHolder" type="Node3D" parent="."]
+transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, 0, 0, 0)
+
+[node name="HolderTest" type="Node3D" parent="."]
+
+[node name="HexagonPrefab" parent="HolderTest" instance=ExtResource("2_eewd5")]
+transform = Transform3D(-0.1, -8.74228e-09, 0, 8.74228e-09, -0.1, 0, 0, 0, 0.1, 12, 0, -8)
+
+[node name="PlacementPrefab" parent="." instance=ExtResource("2_tur7l")]
+visible = false
+
+[node name="BoardDebug" type="MeshInstance3D" parent="."]
+transform = Transform3D(13, 0, 0, 0, 1, 0, 0, 0, 13, 0, 0, 0)
+visible = false
+mesh = SubResource("PlaneMesh_4m16b")
+surface_material_override/0 = SubResource("StandardMaterial3D_arefp")
+
+[node name="EventHandler" type="Node" parent="."]
+script = ExtResource("5_nwggx")
+
+[node name="HitboxHolder" type="Node3D" parent="EventHandler"]
+
+[node name="GameplayHandling" type="Node" parent="."]

@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/DebugMenuScript.gd" id="1_mh7oq"]
 
 [node name="DebugMenuScene" type="Control"]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,22 +12,22 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_mh7oq")
 
-[node name="Node" type="Node" parent="."]
+[node name="MainMenu" type="Node" parent="."]
 
-[node name="Button" type="Button" parent="Node"]
+[node name="OptionsButton" type="Button" parent="MainMenu"]
 offset_left = 438.0
 offset_top = 215.0
 offset_right = 579.0
 offset_bottom = 248.0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Node/Button"]
+[node name="RichTextLabel" type="RichTextLabel" parent="MainMenu/OptionsButton"]
 auto_translate_mode = 1
 layout_mode = 0
 offset_right = 141.0
 offset_bottom = 40.0
 text = "OPTIONS"
 
-[node name="TextEdit" type="TextEdit" parent="Node/Button"]
+[node name="TextEdit" type="TextEdit" parent="MainMenu/OptionsButton"]
 layout_mode = 0
 offset_left = 95.0
 offset_top = 80.0
@@ -35,17 +36,87 @@ offset_bottom = 113.0
 text = "OPTIONS"
 editable = false
 
-[node name="StartGameButton" type="Button" parent="Node"]
+[node name="StartGameButton" type="Button" parent="MainMenu"]
 offset_right = 52.0
 offset_bottom = 29.0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Node/StartGameButton"]
+[node name="RichTextLabel" type="RichTextLabel" parent="MainMenu/StartGameButton"]
 layout_mode = 0
 offset_right = 62.0
 offset_bottom = 40.0
 text = "START"
 
-[node name="Node2" type="Node" parent="."]
+[node name="TutorialButton" type="Button" parent="MainMenu"]
+offset_left = 876.0
+offset_top = 430.0
+offset_right = 1017.0
+offset_bottom = 463.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MainMenu/TutorialButton"]
+auto_translate_mode = 1
+layout_mode = 0
+offset_right = 141.0
+offset_bottom = 40.0
+text = "TUTORIAL"
+
+[node name="TextEdit" type="TextEdit" parent="MainMenu/TutorialButton"]
+layout_mode = 0
+offset_left = 95.0
+offset_top = 80.0
+offset_right = 236.0
+offset_bottom = 113.0
+text = "OPTIONS"
+editable = false
+
+[node name="ExitButton" type="Button" parent="MainMenu"]
+offset_left = 1752.0
+offset_top = 860.0
+offset_right = 1893.0
+offset_bottom = 893.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MainMenu/ExitButton"]
+auto_translate_mode = 1
+layout_mode = 0
+offset_right = 141.0
+offset_bottom = 40.0
+text = "EXIT"
+
+[node name="TextEdit" type="TextEdit" parent="MainMenu/ExitButton"]
+layout_mode = 0
+offset_left = 95.0
+offset_top = 80.0
+offset_right = 236.0
+offset_bottom = 113.0
+text = "OPTIONS"
+editable = false
+
+[node name="GameplayOptions" type="Node" parent="."]
+
+[node name="MusicSlider" type="HSlider" parent="GameplayOptions"]
+offset_left = 327.0
+offset_top = 347.0
+offset_right = 506.0
+offset_bottom = 363.0
+
+[node name="SFXSlider" type="HSlider" parent="GameplayOptions"]
+offset_left = 328.0
+offset_top = 374.0
+offset_right = 507.0
+offset_bottom = 390.0
+
+[node name="MusicLabel" type="RichTextLabel" parent="GameplayOptions"]
+offset_left = 184.0
+offset_top = 343.0
+offset_right = 313.0
+offset_bottom = 383.0
+text = "Music Volume"
+
+[node name="SFXLabel" type="RichTextLabel" parent="GameplayOptions"]
+offset_left = 198.0
+offset_top = 368.0
+offset_right = 327.0
+offset_bottom = 408.0
+text = "SFX Volume"
 
 [node name="GameplayModifierOptions" type="Node" parent="."]
 

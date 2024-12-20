@@ -114,5 +114,4 @@ func createMixedTile(tileName, tileCompleteNum, playerHandNum):
 	partialTextNode = tileCompleteNum
 	
 	newTile.transform = Vector3(0,0,0) #TODO: Move this to players hand based on n
-	
 	pass

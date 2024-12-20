@@ -11,18 +11,22 @@ const CYAN2 = Color(0,255,125,255)
 
 func setTallyTile(new_tile) -> void:
 	setBasicTile(new_tile,BLUE)
+	setTileSides(new_tile,true,true,true,true,true,true)
 	pass
 
 func setExemptTile(new_tile) -> void:
 	setBasicTile(new_tile,RED)
+	setTileSides(new_tile,false,false,false,false,false,false)
 	pass
 
-func ssss(new_tile) -> void:
+func setBorderExemptTile(new_tile) -> void:
 	setBasicTile(new_tile,GREEN)
+	setTileSides(new_tile,false,false,false,false,false,false)
 	pass
 
 func setBorderTallyTile(new_tile) -> void:
 	setBasicTile(new_tile,CYAN)
+	setTileSides(new_tile,true,true,true,true,true,true)
 	pass
 
 func setBasicTile(new_tile, colorToChangeTo) -> void:
@@ -32,10 +36,12 @@ func setBasicTile(new_tile, colorToChangeTo) -> void:
 
 func setMixedGame5Tile(new_tile) -> void:
 	setMixedSegments(new_tile,RED,BLUE,BLUE,BLUE,BLUE,BLUE)
+	setTileSides(new_tile,false,true,true,true,true,true)
 	pass
 
 func setMixedGame6Tile(new_tile) -> void:
 	setMixedSegments(new_tile,BLUE,RED,BLUE,BLUE,BLUE,RED)
+	setTileSides(new_tile,true,false,true,true,true,false)
 	pass
 
 func setMixedSegments(new_tile,s0,s1,s2,s3,s4,s5) -> void:
@@ -64,4 +70,13 @@ func setMixedSegments(new_tile,s0,s1,s2,s3,s4,s5) -> void:
 	segmentC4.get_surface_override_material(0).albedo_color = s4
 	segmentP5.get_surface_override_material(0).albedo_color = s5
 	segmentC5.get_surface_override_material(0).albedo_color = s5
+	pass
+
+func setTileSides(new_tile,NValue,NEValue,SEValue,SValue,SWValue,NWValue):
+	new_tile.North = NValue
+	new_tile.NorthEast = NEValue
+	new_tile.SouthEast = SEValue
+	new_tile.South = SValue
+	new_tile.SouthWest = SWValue
+	new_tile.NorthWest = NWValue
 	pass

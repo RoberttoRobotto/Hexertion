@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://dkcxc3wgq1bdt" path="res://Prefabs/HexagonTilePrefabv2.tscn" id="2_eewd5"]
 [ext_resource type="PackedScene" uid="uid://cxdl3xd0s3ebg" path="res://Prefabs/HitboxPrefab.tscn" id="2_tur7l"]
+[ext_resource type="Script" path="res://Scripts/GameplayHandler.gd" id="4_2l7sq"]
 [ext_resource type="Texture2D" uid="uid://clf3r44js6byy" path="res://Textures/HexagonBoardDebug.png" id="4_bwkjk"]
-[ext_resource type="Script" path="res://Scripts/EventHandler.gd" id="5_nwggx"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_4m16b"]
 
@@ -39,8 +39,11 @@ mesh = SubResource("PlaneMesh_4m16b")
 surface_material_override/0 = SubResource("StandardMaterial3D_arefp")
 
 [node name="EventHandler" type="Node" parent="."]
-script = ExtResource("5_nwggx")
 
 [node name="HitboxHolder" type="Node3D" parent="EventHandler"]
 
 [node name="GameplayHandling" type="Node" parent="."]
+script = ExtResource("4_2l7sq")
+
+[node name="AllHitBoxes" type="Node3D" parent="."]
+unique_name_in_owner = true

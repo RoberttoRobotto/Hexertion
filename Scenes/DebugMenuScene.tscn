@@ -1,9 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://dyyadcrj4n8bi"]
+[gd_scene load_steps=3 format=3 uid="uid://dyyadcrj4n8bi"]
 
 [ext_resource type="Script" path="res://Scripts/DebugMenuScript.gd" id="1_mh7oq"]
+[ext_resource type="Texture2D" uid="uid://cgolkk3ka6xaf" path="res://Textures/HexertionLogoBeta.png" id="2_mosl6"]
 
 [node name="DebugMenuScene" type="Control"]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,22 +12,22 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_mh7oq")
 
-[node name="MainMenu" type="Node" parent="."]
+[node name="Node" type="Node" parent="."]
 
-[node name="OptionsButton" type="Button" parent="MainMenu"]
+[node name="Button" type="Button" parent="Node"]
 offset_left = 438.0
 offset_top = 215.0
 offset_right = 579.0
 offset_bottom = 248.0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="MainMenu/OptionsButton"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Node/Button"]
 auto_translate_mode = 1
 layout_mode = 0
 offset_right = 141.0
 offset_bottom = 40.0
 text = "OPTIONS"
 
-[node name="TextEdit" type="TextEdit" parent="MainMenu/OptionsButton"]
+[node name="TextEdit" type="TextEdit" parent="Node/Button"]
 layout_mode = 0
 offset_left = 95.0
 offset_top = 80.0
@@ -36,122 +36,85 @@ offset_bottom = 113.0
 text = "OPTIONS"
 editable = false
 
-[node name="StartGameButton" type="Button" parent="MainMenu"]
+[node name="StartGameButton" type="Button" parent="Node"]
 offset_right = 52.0
 offset_bottom = 29.0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="MainMenu/StartGameButton"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Node/StartGameButton"]
 layout_mode = 0
 offset_right = 62.0
 offset_bottom = 40.0
 text = "START"
 
-[node name="TutorialButton" type="Button" parent="MainMenu"]
-offset_left = 876.0
-offset_top = 430.0
-offset_right = 1017.0
-offset_bottom = 463.0
-
-[node name="RichTextLabel" type="RichTextLabel" parent="MainMenu/TutorialButton"]
-auto_translate_mode = 1
-layout_mode = 0
-offset_right = 141.0
-offset_bottom = 40.0
-text = "TUTORIAL"
-
-[node name="TextEdit" type="TextEdit" parent="MainMenu/TutorialButton"]
-layout_mode = 0
-offset_left = 95.0
-offset_top = 80.0
-offset_right = 236.0
-offset_bottom = 113.0
-text = "OPTIONS"
-editable = false
-
-[node name="ExitButton" type="Button" parent="MainMenu"]
-offset_left = 1752.0
-offset_top = 860.0
-offset_right = 1893.0
-offset_bottom = 893.0
-
-[node name="RichTextLabel" type="RichTextLabel" parent="MainMenu/ExitButton"]
-auto_translate_mode = 1
-layout_mode = 0
-offset_right = 141.0
-offset_bottom = 40.0
-text = "EXIT"
-
-[node name="TextEdit" type="TextEdit" parent="MainMenu/ExitButton"]
-layout_mode = 0
-offset_left = 95.0
-offset_top = 80.0
-offset_right = 236.0
-offset_bottom = 113.0
-text = "OPTIONS"
-editable = false
-
-[node name="GameplayOptions" type="Node" parent="."]
-
-[node name="MusicSlider" type="HSlider" parent="GameplayOptions"]
-offset_left = 327.0
-offset_top = 347.0
-offset_right = 506.0
-offset_bottom = 363.0
-
-[node name="SFXSlider" type="HSlider" parent="GameplayOptions"]
-offset_left = 328.0
-offset_top = 374.0
-offset_right = 507.0
-offset_bottom = 390.0
-
-[node name="MusicLabel" type="RichTextLabel" parent="GameplayOptions"]
-offset_left = 184.0
-offset_top = 343.0
-offset_right = 313.0
-offset_bottom = 383.0
-text = "Music Volume"
-
-[node name="SFXLabel" type="RichTextLabel" parent="GameplayOptions"]
-offset_left = 198.0
-offset_top = 368.0
-offset_right = 327.0
-offset_bottom = 408.0
-text = "SFX Volume"
+[node name="Node2" type="Node" parent="."]
 
 [node name="GameplayModifierOptions" type="Node" parent="."]
 
-[node name="BorderTilesCheckBox" type="CheckBox" parent="GameplayModifierOptions"]
-offset_left = 1001.0
-offset_top = 180.0
-offset_right = 1025.0
-offset_bottom = 204.0
+[node name="GameplayModifiersLabel" type="RichTextLabel" parent="GameplayModifierOptions"]
+offset_left = 810.0
+offset_top = 130.0
+offset_right = 972.0
+offset_bottom = 170.0
+text = "Gameplay modifiers"
 
 [node name="BorderTilesLabel" type="RichTextLabel" parent="GameplayModifierOptions"]
-offset_left = 813.0
-offset_top = 179.0
-offset_right = 1007.0
-offset_bottom = 219.0
+offset_left = 800.0
+offset_top = 220.0
+offset_right = 994.0
+offset_bottom = 260.0
 text = "Include Border Tiles:"
+
+[node name="BorderTilesCheckBox" type="CheckBox" parent="GameplayModifierOptions"]
+offset_left = 1000.0
+offset_top = 220.0
+offset_right = 1024.0
+offset_bottom = 244.0
+
+[node name="MixedTilesLabel" type="RichTextLabel" parent="GameplayModifierOptions"]
+offset_left = 800.0
+offset_top = 255.0
+offset_right = 973.0
+offset_bottom = 295.0
+text = "Include Mixed Tiles:"
 
 [node name="MixedTilesCheckBox" type="CheckBox" parent="GameplayModifierOptions"]
 offset_left = 1000.0
-offset_top = 253.0
+offset_top = 255.0
 offset_right = 1024.0
-offset_bottom = 277.0
+offset_bottom = 279.0
 
-[node name="MixedTilesLabel" type="RichTextLabel" parent="GameplayModifierOptions"]
-offset_left = 815.0
-offset_top = 253.0
-offset_right = 988.0
-offset_bottom = 293.0
-text = "Include Mixed Tiles:"
+[node name="Power Spaces" type="RichTextLabel" parent="GameplayModifierOptions"]
+offset_left = 809.0
+offset_top = 296.0
+offset_right = 982.0
+offset_bottom = 336.0
+text = "Include Power Spaces:"
 
-[node name="RichTextLabel" type="RichTextLabel" parent="GameplayModifierOptions"]
-offset_left = 802.0
-offset_top = 76.0
-offset_right = 964.0
-offset_bottom = 116.0
-text = "Gameplay modifiers"
+[node name="PowerSpacesCheckBox" type="CheckBox" parent="GameplayModifierOptions"]
+offset_left = 999.0
+offset_top = 296.0
+offset_right = 1023.0
+offset_bottom = 320.0
+
+[node name="AdjacentConstraint" type="RichTextLabel" parent="GameplayModifierOptions"]
+offset_left = 752.0
+offset_top = 334.0
+offset_right = 990.0
+offset_bottom = 374.0
+text = "Remove Adjacent Constraint:"
+
+[node name="AdjacentConstraintBox" type="CheckBox" parent="GameplayModifierOptions"]
+offset_left = 997.0
+offset_top = 335.0
+offset_right = 1021.0
+offset_bottom = 359.0
+
+[node name="HexertionLogoBeta" type="Sprite2D" parent="."]
+position = Vector2(586, 30)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_mosl6")
 
 [connection signal="pressed" from="GameplayModifierOptions/BorderTilesCheckBox" to="." method="_onBorderTilespressed"]
 [connection signal="pressed" from="GameplayModifierOptions/MixedTilesCheckBox" to="." method="_onMixedTilespressed"]
+[connection signal="pressed" from="GameplayModifierOptions/PowerSpacesCheckBox" to="." method="_onBorderTilespressed"]
+[connection signal="pressed" from="GameplayModifierOptions/AdjacentConstraintBox" to="." method="_onBorderTilespressed"]
